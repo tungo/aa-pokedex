@@ -5,12 +5,8 @@ export const selectAllPokemon = state => (
 )
 
 export const selectPokemonItem = (state, itemId) => {
-  const items = state.pokemonDetail.items ? state.pokemonDetail.items : []
-
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].id === parseInt(itemId)) {
-      return items[i]
-    }
+  if (!state.pokemonDetail.items) {
+    return {};
   }
-  return {}
+  return state.pokemonDetail.items.find(item => `${item.id}` === itemId)
 }

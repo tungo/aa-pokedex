@@ -6,12 +6,15 @@
   display: flex;
 }
 
-.pokemon-index {
+ul.pokemon-index {
   list-style: none;
+  padding: 10px;
+  width: 150px;
+  display: block;
 }
 
 .pokemon-index-item {
-
+  // width: 150px;
 }
 
 .pokemon-index-item img {
@@ -19,14 +22,39 @@
   height: 20px;
 }
 
-.pokemon-detali {
-  padding: 20px;
+.pokemon-detail {
+  // padding: 20px;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
 .pokemon-detail .pkm-img {
   height: 300px;
+}
+
+.pokemon-detail .name {
+  font-size: 30px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.pokemon-items {
+  display: flex;
+  list-style: none;
+  align-content: center;
+}
+
+.pokemon-items li {
+
+}
+
+.pokemon-items li a {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-items li img{
+  height: 60px;
 }

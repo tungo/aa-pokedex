@@ -2,10 +2,11 @@ import React from 'react'
 
 class ItemDetail extends React.Component {
   render() {
-    console.log(this.props.item);
     return (
-      <div>
-        {JSON.stringify(this.props.item)}
+      <div className="item-detail">
+        <div className="item-name">{this.props.item.name} </div>
+        <div>Happiness: {this.props.item.happiness} </div>
+        <div>Price: {this.props.item.price} </div>
       </div>
     )
   }

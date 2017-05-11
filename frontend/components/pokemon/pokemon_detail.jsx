@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom'
 
 import ItemDetailContainer from '../item/item_detail_container'
+import ItemDetailItem from '../item/item_detail_item'
 
 class PokemonDetail extends React.Component {
 
@@ -19,16 +20,24 @@ class PokemonDetail extends React.Component {
 
   render() {
     const moves = this.props.pokemonDetail.moves ? this.props.pokemonDetail.moves.join(', ') : ''
-    const items = this.props.pokemonDetail.items ? JSON.stringify(this.props.pokemonDetail.items) : ''
+
+    let items = this.props.pokemonDetail.items
+    if (items) {
+      items = items.map((it, idx) => <li key={idx}><ItemDetailItem item={it} pokemonId={this.props.pokemonDetail.id}/></li>)
+    }
+
     return (
       <div className="pokemon-detail">
         <div><img className="pkm-img" src={this.props.pokemonDetail.image_url}/></div>
-        <div>{this.props.pokemonDetail.name}</div>
+        <div className="name">{this.props.pokemonDetail.name}</div>
         <div>Type: {this.props.pokemonDetail.poke_type}</div>
         <div>Attack: {this.props.pokemonDetail.attack}</div>
         <div>Defense: {this.props.pokemonDetail.attack}</div>
         <div>Moves: { moves }</div>
-        <div>Items: { items }</div>
+
+        <ul className="pokemon-items">
+          {items}
+        </ul>
 
         <Route path="/pokemon/:pokemonId/item/:itemId" component={ItemDetailContainer} />
       </div>
