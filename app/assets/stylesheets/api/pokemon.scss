@@ -1,3 +1,32 @@
 // Place all the styles related to the api/pokemon controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content {
+  display: flex;
+}
+
+.pokemon-index {
+  list-style: none;
+}
+
+.pokemon-index-item {
+
+}
+
+.pokemon-index-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.pokemon-detali {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.pokemon-detail .pkm-img {
+  height: 300px;
+}
